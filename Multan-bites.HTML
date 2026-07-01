@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -7,16 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Marcellus&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  :root{
-    --black:#0B0907;
-    --black-soft:#15110C;
-    --gold:#C9A84C;
-    --gold-bright:#E8C766;
-    --gold-dim:#8A7333;
-    --cream:#F4EFE3;
-    --maroon:#3A0E10;
-    --text-muted:#A89C82;
-  }
+  :root{--black:#0B0907;--black-soft:#15110C;--gold:#C9A84C;--gold-bright:#E8C766;--gold-dim:#8A7333;--cream:#F4EFE3;--maroon:#3A0E10;--text-muted:#A89C82;}
   html{scroll-behavior:smooth;}
   body{background:var(--black);color:var(--cream);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
   ::selection{background:var(--gold);color:var(--black);}
@@ -25,7 +16,7 @@
   .nav-links{display:flex;gap:2.2rem;list-style:none;}
   .nav-links a{text-decoration:none;color:var(--text-muted);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.3s;}
   .nav-links a:hover{color:var(--gold-bright);}
-  .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 6vw;position:relative;background:radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.10) 0%, transparent 55%),linear-gradient(180deg, var(--black) 0%, var(--black-soft) 100%);}
+  .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 6vw;position:relative;background:radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.10) 0%, transparent 55%),linear-gradient(180deg,var(--black) 0%,var(--black-soft) 100%);}
   .hero::before{content:'';position:absolute;inset:24px;border:1px solid rgba(201,168,76,0.25);pointer-events:none;}
   .hero-eyebrow{font-family:'Cinzel',serif;color:var(--gold);font-size:0.78rem;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:1.5rem;}
   .hero h1{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(3rem,8vw,6.5rem);line-height:1;color:var(--cream);text-shadow:0 0 40px rgba(201,168,76,0.15);}
@@ -57,9 +48,11 @@
   .menu-item-price{color:var(--gold);font-family:'Cinzel',serif;font-size:0.95rem;white-space:nowrap;}
   #gallery{background:var(--black-soft);}
   .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;}
-  .gallery-item{overflow:hidden;border:1px solid rgba(201,168,76,0.15);position:relative;aspect-ratio:1;transition:border-color 0.3s;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+  .gallery-item{overflow:hidden;border:1px solid rgba(201,168,76,0.15);aspect-ratio:1;transition:border-color 0.3s;}
   .gallery-item:hover{border-color:var(--gold);}
-  .gallery-item.large{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;font-size:5rem;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;display:block;}
+  .gallery-item:hover img{transform:scale(1.06);}
+  .gallery-item.large{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;}
   #testimonial{background:linear-gradient(180deg,var(--black),var(--maroon) 180%);text-align:center;}
   .quote{font-family:'Marcellus',serif;font-size:clamp(1.3rem,2.5vw,1.8rem);max-width:700px;margin:0 auto 1.5rem;color:var(--cream);font-style:italic;}
   .quote-author{color:var(--gold);font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;}
@@ -151,13 +144,12 @@
     <h2 class="section-title">A Glimpse Inside</h2>
   </div>
   <div class="gallery-grid fade-up">
-    <div class="gallery-item large" style="background:linear-gradient(135deg,#3D2008,#1A0E04);">🍖</div>
-    <div class="gallery-item" style="background:linear-gradient(135deg,#2A1A08,#150D04);">🥘</div>
-    <div class="gallery-item" style="background:linear-gradient(135deg,#3D1208,#1A0804);">🍕</div>
-    <div class="gallery-item" style="background:linear-gradient(135deg,#1A2008,#0D1504);">🍝</div>
-    <div class="gallery-item" style="background:linear-gradient(135deg,#201408,#100A04);">🔥</div>
-    <div class="gallery-item" style="background:linear-gradient(135deg,#3D2A08,#1A1404);">🍔</div>
-    <div class="gallery-item" style="background:linear-gradient(135deg,#1A3008,#0D1804);">🍚</div>
+    <div class="gallery-item large"><img src="photo-1627042633145-b780d842ba45.jpeg" alt="BBQ Kebab"/></div>
+    <div class="gallery-item"><img src="photo-1728745118618-941ec839208f.jpeg" alt="Karahi"/></div>
+    <div class="gallery-item"><img src="photo-1555072956-7758afb20e8f.jpeg" alt="Pizza"/></div>
+    <div class="gallery-item"><img src="photo-1632158929962-a929c9e87570.jpeg" alt="Pasta"/></div>
+    <div class="gallery-item"><img src="photo-1708782340793-ec5f2159a689.jpeg" alt="Burger"/></div>
+    <div class="gallery-item"><img src="photo-1568901346375-23c9450c58cd.jpeg" alt="Biryani"/></div>
   </div>
 </section>
 <section id="testimonial">
@@ -195,4 +187,4 @@
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 </body>
-  </html>
+</html>
