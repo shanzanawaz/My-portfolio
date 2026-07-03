@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rosé Studio — Premium Fashion</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--pink:#E8A0B4;--pink-deep:#C4687E;--pink-pale:#FDF0F4;--pink-light:#FAE0E8;--white:#FFFFFF;--dark:#1A1015;--text:#4A3540;--muted:#9A8090;--border:#F0D8E0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 6vw;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--dark);letter-spacing:0.08em;}
+.nav-logo span{color:var(--pink-deep);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:0.82rem;letter-spacing:0.06em;transition:color 0.2s;}
+.nav-links a:hover{color:var(--pink-deep);}
+.nav-cta{padding:0.6rem 1.4rem;background:var(--dark);color:white;text-decoration:none;font-size:0.78rem;letter-spacing:0.08em;border-radius:2rem;transition:background 0.2s;}
+.nav-cta:hover{background:var(--pink-deep);}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem 6vw 4rem;gap:4rem;background:var(--pink-pale);}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:var(--pink-light);color:var(--pink-deep);padding:0.35rem 1rem;border-radius:2rem;font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:600;line-height:1.05;color:var(--dark);margin-bottom:1.2rem;}
+.hero h1 em{font-style:italic;color:var(--pink-deep);}
+.hero-sub{color:var(--muted);font-size:1rem;max-width:420px;margin-bottom:2.2rem;line-height:1.8;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{padding:0.9rem 2rem;background:var(--dark);color:white;text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;border-radius:2rem;transition:all 0.2s;}
+.btn-primary:hover{background:var(--pink-deep);}
+.btn-secondary{padding:0.9rem 2rem;border:1.5px solid var(--pink);color:var(--pink-deep);text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;border-radius:2rem;transition:all 0.2s;}
+.btn-secondary:hover{background:var(--pink-light);}
+.hero-right{position:relative;}
+.hero-slider{border-radius:2rem;overflow:hidden;aspect-ratio:3/4;position:relative;background:var(--pink-light);}
+.slider-track{display:flex;height:100%;transition:transform 0.5s ease;}
+.slider-track img{min-width:100%;height:100%;object-fit:cover;object-position:top;flex-shrink:0;}
+.sl-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.85);color:var(--dark);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;z-index:3;transition:background 0.2s;}
+.sl-btn:hover{background:white;}
+.sl-prev{left:0.8rem;}
+.sl-next{right:0.8rem;}
+.sl-dots{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);display:flex;gap:0.4rem;z-index:3;}
+.sl-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.5);cursor:pointer;transition:background 0.2s;border:none;}
+.sl-dot.active{background:white;}
+.new-tag{position:absolute;top:1.5rem;right:1.5rem;background:var(--pink-deep);color:white;padding:0.4rem 1rem;border-radius:2rem;font-size:0.72rem;font-weight:500;z-index:3;}
+.hero-badge{position:absolute;bottom:-1rem;left:-1rem;background:white;padding:1rem 1.5rem;border-radius:1rem;box-shadow:0 8px 30px rgba(196,104,126,0.15);z-index:3;}
+.badge-val{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--pink-deep);}
+.badge-txt{font-size:0.72rem;color:var(--muted);}
+.marquee-wrap{background:var(--dark);padding:1rem 0;overflow:hidden;}
+.marquee{display:flex;gap:3rem;animation:marquee 20s linear infinite;width:max-content;}
+.marquee span{color:rgba(255,255,255,0.6);font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;white-space:nowrap;}
+.marquee .dot{color:var(--pink);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+#collection{padding:5rem 6vw;background:var(--white);}
+.section-tag{font-size:0.7rem;font-weight:500;color:var(--pink-deep);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.5rem;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);color:var(--dark);font-weight:600;margin-bottom:2.5rem;}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;}
+.product-card{border-radius:1.2rem;overflow:hidden;background:var(--pink-pale);transition:transform 0.3s,box-shadow 0.3s;}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(196,104,126,0.15);}
+.prod-slider{position:relative;height:300px;overflow:hidden;background:var(--pink-light);}
+.prod-track{display:flex;height:100%;transition:transform 0.4s ease;}
+.prod-track img{min-width:100%;height:100%;object-fit:cover;object-position:top;flex-shrink:0;}
+.prod-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.8);color:var(--dark);border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;z-index:2;opacity:0;transition:opacity 0.2s;}
+.product-card:hover .prod-btn{opacity:1;}
+.prod-prev{left:0.5rem;}
+.prod-next{right:0.5rem;}
+.prod-dots{position:absolute;bottom:0.5rem;left:50%;transform:translateX(-50%);display:flex;gap:0.3rem;z-index:2;}
+.prod-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.5);cursor:pointer;transition:background 0.2s;border:none;}
+.prod-dot.active{background:white;}
+.p-badge{position:absolute;top:0.8rem;left:0.8rem;padding:0.25rem 0.75rem;border-radius:2rem;font-size:0.65rem;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;z-index:2;}
+.b-new{background:var(--dark);color:white;}
+.b-sale{background:var(--pink-deep);color:white;}
+.b-hot{background:#FF6B6B;color:white;}
+.product-body{padding:1.2rem;}
+.product-cat{font-size:0.68rem;color:var(--pink-deep);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;}
+.product-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--dark);font-weight:600;margin-bottom:0.5rem;}
+.product-price{display:flex;align-items:center;gap:0.7rem;}
+.price-new{font-size:1rem;font-weight:500;color:var(--pink-deep);}
+.price-old{font-size:0.85rem;color:var(--muted);text-decoration:line-through;}
+.product-footer{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;}
+.btn-cart{padding:0.55rem 1.2rem;background:var(--dark);color:white;border:none;border-radius:2rem;font-size:0.75rem;cursor:pointer;transition:background 0.2s;font-family:'DM Sans',sans-serif;}
+.btn-cart:hover{background:var(--pink-deep);}
+.btn-wish{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border);background:white;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;transition:all 0.2s;}
+.btn-wish:hover{border-color:var(--pink-deep);}
+#features{padding:4rem 6vw;background:var(--pink-pale);}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;}
+.feature{padding:1.8rem;background:white;border-radius:1rem;text-align:center;border:1px solid var(--border);}
+.feature-icon{font-size:2rem;margin-bottom:0.8rem;}
+.feature-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--dark);font-weight:600;margin-bottom:0.4rem;}
+.feature-text{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+#reviews{padding:5rem 6vw;background:var(--white);}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2.5rem;}
+.review-card{padding:1.8rem;border:1px solid var(--border);border-radius:1.2rem;background:var(--pink-pale);}
+.stars{color:var(--pink-deep);font-size:0.9rem;margin-bottom:0.8rem;}
+.review-text{font-size:0.9rem;color:var(--text);line-height:1.7;margin-bottom:1rem;font-style:italic;}
+.reviewer{display:flex;align-items:center;gap:0.8rem;}
+.reviewer-avatar{width:38px;height:38px;border-radius:50%;background:var(--pink-light);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.reviewer-name{font-size:0.85rem;font-weight:500;color:var(--dark);}
+.reviewer-loc{font-size:0.72rem;color:var(--muted);}
+#cta{padding:5rem 6vw;background:var(--dark);text-align:center;}
+#cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);color:white;margin-bottom:1rem;}
+#cta h2 em{font-style:italic;color:var(--pink);}
+#cta p{color:rgba(255,255,255,0.6);margin-bottom:2.5rem;font-size:1rem;}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-pink{padding:1rem 2.5rem;background:var(--pink-deep);color:white;text-decoration:none;font-size:0.85rem;letter-spacing:0.08em;border-radius:2rem;transition:all 0.2s;}
+.btn-pink:hover{background:var(--pink);}
+.btn-ghost{padding:1rem 2.5rem;border:1.5px solid rgba(255,255,255,0.3);color:white;text-decoration:none;font-size:0.85rem;letter-spacing:0.08em;border-radius:2rem;transition:all 0.2s;}
+.btn-ghost:hover{border-color:var(--pink);color:var(--pink);}
+#contact{padding:4rem 6vw;background:var(--pink-pale);text-align:center;}
+.contact-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;}
+.c-btn{padding:0.85rem 1.8rem;text-decoration:none;font-size:0.82rem;font-weight:500;border-radius:2rem;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;}
+.c-btn.dark{background:var(--dark);color:white;}
+.c-btn.dark:hover{background:var(--pink-deep);}
+.c-btn.outline{border:1.5px solid var(--pink);color:var(--pink-deep);}
+.c-btn.outline:hover{background:var(--pink-light);}
+footer{background:var(--dark);text-align:center;padding:1.8rem;font-size:0.78rem;color:rgba(255,255,255,0.3);}
+footer span{color:var(--pink);}
+@media(max-width:768px){.hero{grid-template-columns:1fr;padding-top:6rem;gap:2rem;}.hero-right{display:none;}.nav-links,.nav-cta{display:none;}}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Rosé<span>Studio</span></div>
+  <ul class="nav-links">
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#collection" class="nav-cta">Shop Now</a>
+</nav>
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-tag">✦ New Summer Collection 2026</span>
+    <h1>Dress to <em>Express</em> Your True Self</h1>
+    <p class="hero-sub">Premium Pakistani fashion for the modern woman. Elegant, comfortable, and crafted with love — wear your confidence.</p>
+    <div class="hero-btns">
+      <a href="#collection" class="btn-primary">Shop Collection</a>
+      <a href="#reviews" class="btn-secondary">See Reviews</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-slider" id="heroSlider">
+      <span class="new-tag">✨ New Arrivals</span>
+      <div class="slider-track" id="heroTrack">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Model 1"/>
+        <img src="https://images.unsplash.com/photo-1614251056216-10ba4e4b406e?w=600&q=80" alt="Model 2"/>
+        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80" alt="Model 3"/>
+      </div>
+      <button class="sl-btn sl-prev" onclick="heroGo(-1)">&#8249;</button>
+      <button class="sl-btn sl-next" onclick="heroGo(1)">&#8250;</button>
+      <div class="sl-dots" id="heroDots">
+        <button class="sl-dot active" onclick="heroGoTo(0)"></button>
+        <button class="sl-dot" onclick="heroGoTo(1)"></button>
+        <button class="sl-dot" onclick="heroGoTo(2)"></button>
+      </div>
+    </div>
+    <div class="hero-badge"><div class="badge-val">500+</div><div class="badge-txt">Happy Customers</div></div>
+  </div>
+</section>
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>Premium Quality</span><span class="dot">✦</span>
+    <span>Free Delivery Over Rs. 2,000</span><span class="dot">✦</span>
+    <span>Easy Returns</span><span class="dot">✦</span>
+    <span>Handcrafted in Pakistan</span><span class="dot">✦</span>
+    <span>New Arrivals Weekly</span><span class="dot">✦</span>
+    <span>Premium Quality</span><span class="dot">✦</span>
+    <span>Free Delivery Over Rs. 2,000</span><span class="dot">✦</span>
+    <span>Easy Returns</span><span class="dot">✦</span>
+    <span>Handcrafted in Pakistan</span><span class="dot">✦</span>
+    <span>New Arrivals Weekly</span><span class="dot">✦</span>
+  </div>
+</div>
+<section id="collection">
+  <div class="fade-up">
+    <p class="section-tag">Our Collection</p>
+    <h2 class="section-title">Featured Pieces</h2>
+  </div>
+  <div class="product-grid fade-up">
+    <div class="product-card">
+      <div class="prod-slider">
+        <span class="p-badge b-new">New</span>
+        <div class="prod-track">
+          <img src="https://images.unsplash.com/photo-1614251056216-10ba4e4b406e?w=500&q=80" alt="Suit 1"/>
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80" alt="Suit 2"/>
+        </div>
+        <button class="prod-btn prod-prev">&#8249;</button>
+        <button class="prod-btn prod-next">&#8250;</button>
+        <div class="prod-dots"><button class="prod-dot active"></button><button class="prod-dot"></button></div>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Formal Wear</div>
+        <div class="product-name">Blossom Embroidered Suit</div>
+        <div class="product-price"><span class="price-new">Rs. 4,500</span><span class="price-old">Rs. 6,000</span></div>
+        <div class="product-footer"><button class="btn-cart">Add to Cart</button><button class="btn-wish">🤍</button></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="prod-slider">
+        <span class="p-badge b-hot">Hot</span>
+        <div class="prod-track">
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&q=80" alt="Kurti 1"/>
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Kurti 2"/>
+        </div>
+        <button class="prod-btn prod-prev">&#8249;</button>
+        <button class="prod-btn prod-next">&#8250;</button>
+        <div class="prod-dots"><button class="prod-dot active"></button><button class="prod-dot"></button></div>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Casual Wear</div>
+        <div class="product-name">Rose Linen Kurti</div>
+        <div class="product-price"><span class="price-new">Rs. 2,200</span><span class="price-old">Rs. 3,000</span></div>
+        <div class="product-footer"><button class="btn-cart">Add to Cart</button><button class="btn-wish">🤍</button></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="prod-slider">
+        <span class="p-badge b-sale">Sale</span>
+        <div class="prod-track">
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80" alt="Chiffon 1"/>
+          <img src="https://images.unsplash.com/photo-1614251056216-10ba4e4b406e?w=500&q=80" alt="Chiffon 2"/>
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&q=80" alt="Chiffon 3"/>
+        </div>
+        <button class="prod-btn prod-prev">&#8249;</button>
+        <button class="prod-btn prod-next">&#8250;</button>
+        <div class="prod-dots"><button class="prod-dot active"></button><button class="prod-dot"></button><button class="prod-dot"></button></div>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Party Wear</div>
+        <div class="product-name">Lavender Chiffon 3-Piece</div>
+        <div class="product-price"><span class="price-new">Rs. 6,800</span><span class="price-old">Rs. 9,500</span></div>
+        <div class="product-footer"><button class="btn-cart">Add to Cart</button><button class="btn-wish">🤍</button></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="prod-slider">
+        <span class="p-badge b-new">New</span>
+        <div class="prod-track">
+          <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500&q=80" alt="Dupatta 1"/>
+          <img src="https://images.unsplash.com/photo-1614251056216-10ba4e4b406e?w=500&q=80" alt="Dupatta 2"/>
+        </div>
+        <button class="prod-btn prod-prev">&#8249;</button>
+        <button class="prod-btn prod-next">&#8250;</button>
+        <div class="prod-dots"><button class="prod-dot active"></button><button class="prod-dot"></button></div>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Accessories</div>
+        <div class="product-name">Silk Embroidered Dupatta</div>
+        <div class="product-price"><span class="price-new">Rs. 1,800</span></div>
+        <div class="product-footer"><button class="btn-cart">Add to Cart</button><button class="btn-wish">🤍</button></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="prod-slider">
+        <span class="p-badge b-hot">Hot</span>
+        <div class="prod-track">
+          <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=500&q=80" alt="Lawn 1"/>
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Lawn 2"/>
+        </div>
+        <button class="prod-btn prod-prev">&#8249;</button>
+        <button class="prod-btn prod-next">&#8250;</button>
+        <div class="prod-dots"><button class="prod-dot active"></button><button class="prod-dot"></button></div>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Lawn Collection</div>
+        <div class="product-name">Mint Summer Lawn 2-Piece</div>
+        <div class="product-price"><span class="price-new">Rs. 3,200</span><span class="price-old">Rs. 4,000</span></div>
+        <div class="product-footer"><button class="btn-cart">Add to Cart</button><button class="btn-wish">🤍</button></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="prod-slider">
+        <span class="p-badge b-sale">Sale</span>
+        <div class="prod-track">
+          <img src="https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?w=500&q=80" alt="Bridal 1"/>
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80" alt="Bridal 2"/>
+        </div>
+        <button class="prod-btn prod-prev">&#8249;</button>
+        <button class="prod-btn prod-next">&#8250;</button>
+        <div class="prod-dots"><button class="prod-dot active"></button><button class="prod-dot"></button></div>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">Bridal Wear</div>
+        <div class="product-name">Pearl Bridal Lehenga</div>
+        <div class="product-price"><span class="price-new">Rs. 18,000</span><span class="price-old">Rs. 25,000</span></div>
+        <div class="product-footer"><button class="btn-cart">Add to Cart</button><button class="btn-wish">🤍</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="features">
+  <div class="features-grid fade-up">
+    <div class="feature"><div class="feature-icon">🚚</div><div class="feature-title">Free Delivery</div><p class="feature-text">Free delivery on all orders above Rs. 2,000 across Pakistan.</p></div>
+    <div class="feature"><div class="feature-icon">↩️</div><div class="feature-title">Easy Returns</div><p class="feature-text">7-day easy return policy — no questions asked.</p></div>
+    <div class="feature"><div class="feature-icon">✨</div><div class="feature-title">Premium Quality</div><p class="feature-text">Handpicked fabrics and expert craftsmanship in every piece.</p></div>
+    <div class="feature"><div class="feature-icon">🔒</div><div class="feature-title">Secure Payment</div><p class="feature-text">Cash on delivery + bank transfer — 100% safe & secure.</p></div>
+  </div>
+</section>
+<section id="reviews">
+  <div class="section-head fade-up">
+    <p class="section-tag">Customer Reviews</p>
+    <h2 class="section-title">What Our Ladies Say</h2>
+  </div>
+  <div class="reviews-grid fade-up">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"The quality is absolutely amazing! The Blossom Embroidered Suit fits perfectly and the fabric is so soft. Will definitely order again!"</p>
+      <div class="reviewer"><div class="reviewer-avatar">👩</div><div><div class="reviewer-name">Ayesha Khan</div><div class="reviewer-loc">Lahore, Pakistan</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Fast delivery and beautiful packaging! The lawn suit is exactly as shown. Rosé Studio never disappoints!"</p>
+      <div class="reviewer"><div class="reviewer-avatar">👩‍🦱</div><div><div class="reviewer-name">Sana Malik</div><div class="reviewer-loc">Karachi, Pakistan</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"I ordered the bridal lehenga for my sister's wedding and it was STUNNING. Everyone kept asking where we got it. 10/10!"</p>
+      <div class="reviewer"><div class="reviewer-avatar">👩‍🦳</div><div><div class="reviewer-name">Fatima Raza</div><div class="reviewer-loc">Multan, Pakistan</div></div></div>
+    </div>
+  </div>
+</section>
+<section id="cta">
+  <div class="fade-up">
+    <h2>Your Style, <em>Your Story</em></h2>
+    <p>New arrivals every week. Order now and get free delivery!</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/923094076010" class="btn-pink">💬 Order on WhatsApp</a>
+      <a href="#collection" class="btn-ghost">Browse Collection</a>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="fade-up">
+    <p class="section-tag">Get In Touch</p>
+    <h2 class="section-title" style="margin-bottom:0.5rem;">Order Now</h2>
+    <p style="color:var(--muted);font-size:0.95rem;">Based in Multan · Delivering across Pakistan</p>
+    <div class="contact-btns">
+      <a href="https://wa.me/923094076010" class="c-btn dark">💬 WhatsApp</a>
+      <a href="tel:+923094076010" class="c-btn outline">📞 Call Us</a>
+      <a href="mailto:shanzanawaz2311@gmail.com" class="c-btn outline">✉️ Email</a>
+    </div>
+  </div>
+</section>
+<footer>© 2026 <span>Rosé Studio</span> · Premium Fashion · Multan, Pakistan</footer>
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+document.querySelectorAll('.btn-wish').forEach(btn=>{btn.addEventListener('click',()=>{btn.textContent=btn.textContent==='🤍'?'❤️':'🤍';});});
+let heroIdx=0;
+const heroTotal=3;
+const heroTrack=document.getElementById('heroTrack');
+const heroDotBtns=document.querySelectorAll('#heroDots .sl-dot');
+function heroGoTo(n){heroIdx=(n+heroTotal)%heroTotal;heroTrack.style.transform='translateX(-'+(heroIdx*100)+'%)';heroDotBtns.forEach((d,i)=>d.classList.toggle('active',i===heroIdx));}
+function heroGo(dir){heroGoTo(heroIdx+dir);}
+setInterval(()=>heroGoTo(heroIdx+1),4000);
+document.querySelectorAll('.prod-slider').forEach(slider=>{
+  const track=slider.querySelector('.prod-track');
+  const dots=slider.querySelectorAll('.prod-dot');
+  const total=slider.querySelectorAll('.prod-track img').length;
+  let idx=0;
+  function goTo(n){idx=(n+total)%total;track.style.transform='translateX(-'+(idx*100)+'%)';dots.forEach((d,i)=>d.classList.toggle('active',i===idx));}
+  slider.querySelector('.prod-prev').addEventListener('click',()=>goTo(idx-1));
+  slider.querySelector('.prod-next').addEventListener('click',()=>goTo(idx+1));
+  dots.forEach((d,i)=>d.addEventListener('click',()=>goTo(i)));
+});
+</script>
+</body>
+</html>
