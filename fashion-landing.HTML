@@ -3,46 +3,53 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- GitHub path ensure kar raha hai ke images link hon -->
     <base href="https://raw.githubusercontent.com/shanzanawaz/My-portfolio/main/">
-    <title>Rosé Studio | Luxury Boutique</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <title>Rosé Studio | Elite Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
     <style>
-        :root { --gold: #C5A059; --dark: #1A1A1A; --soft-pink: #FDF0F4; }
-        body { font-family: 'Montserrat', sans-serif; margin: 0; color: var(--dark); background: #fff; }
-        section { padding: 80px 6vw; }
-        h2 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; text-align: center; margin-bottom: 50px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: #fff; border: 1px solid #eee; padding: 15px; text-align: center; border-radius: 10px; }
-        .card img { width: 100%; height: 350px; object-fit: cover; border-radius: 5px; }
-        .price { font-weight: 700; color: var(--gold); margin: 10px 0; }
-        .btn-group { display: flex; gap: 10px; justify-content: center; }
-        .btn { padding: 10px 15px; text-decoration: none; font-size: 0.8rem; cursor: pointer; border: none; border-radius: 5px; }
-        .add-cart { background: #eee; }
-        .buy-now { background: var(--dark); color: white; }
+        body { background: #0a0a0a; color: #e0e0e0; font-family: 'Inter', sans-serif; margin: 0; }
+        .hero-banner { height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #000; }
+        .hero-banner h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #fff; margin: 0; }
+        
+        .product-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; padding: 60px 5vw; }
+        .luxury-card { background: #161616; border: 1px solid #333; padding: 20px; transition: 0.4s; }
+        .luxury-card:hover { border-color: #c5a059; }
+        .luxury-card img { width: 100%; height: 400px; object-fit: cover; }
+        
+        .price-tag { color: #c5a059; font-size: 1.4rem; font-weight: 600; margin: 15px 0; }
+        .btn-luxury { display: block; width: 100%; padding: 12px; background: #c5a059; color: #000; text-align: center; text-decoration: none; font-weight: 600; margin-top: 10px; border: none; cursor: pointer; }
+        .btn-cart { background: #333; color: #fff; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
-<section id="collection">
-    <h2>Our Signature Collection</h2>
-    <div class="grid">
-        <!-- 14 Products List -->
-        <div class="card"><img src="images/mohammadabbasibLaMHGx3cIgunsplash.jpg"><h3>Formal Essence</h3><p class="price">Rs. 5,500</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/muneebmalhotra340zW7f6wJcunsplash.jpg"><h3>Bridal Glow</h3><p class="price">Rs. 12,000</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/muneebmalhotraPs6bTHRuJYgunsplash.jpg"><h3>Luxury Silk</h3><p class="price">Rs. 8,500</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/muneebmalhotraRdv9MBPHgYunsplash.jpg"><h3>Classic Wear</h3><p class="price">Rs. 4,500</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/muneebmalhotratK5QwL0r0ewunsplash.jpg"><h3>Casual Chic</h3><p class="price">Rs. 3,200</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/pexelsbijoyrahaman215872163835560689.jpg"><h3>Summer Lawn</h3><p class="price">Rs. 2,800</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/pexelsdhanno20792015.jpg"><h3>Chiffon Dream</h3><p class="price">Rs. 6,800</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/pexelsdhanno25288453.jpg"><h3>Party Edition</h3><p class="price">Rs. 7,500</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/pexelsdhanno35902080.jpg"><h3>Velvet Touch</h3><p class="price">Rs. 9,000</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/pexelsdhanno36104911.jpg"><h3>Lawn Special</h3><p class="price">Rs. 3,500</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/pexelsgurshergill6370201030167011.jpg"><h3>Silk Dupatta</h3><p class="price">Rs. 1,800</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/pexelsgurshergill6370201030167012.jpg"><h3>Luxury Accessory</h3><p class="price">Rs. 1,200</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/pexelsiramshehzad4508140436908409.jpg"><h3>Ready-to-Wear</h3><p class="price">Rs. 5,000</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
-        <div class="card"><img src="images/mohammadabbasibLaMHGx3cIgunsplash.jpg"><h3>Signature Series</h3><p class="price">Rs. 8,000</p><div class="btn-group"><button class="btn add-cart">Add to Cart</button><a href="https://wa.me/923094076010" class="btn buy-now">Buy Now</a></div></div>
+<div class="hero-banner">
+    <h1>Rosé Studio</h1>
+    <p>Elite Collection - Handcrafted in Multan</p>
+</div>
+
+<div class="product-container">
+    <!-- Product 1 -->
+    <div class="luxury-card">
+        <img src="images/muneebmalhotraRdv9MBPHgYunsplash.jpg">
+        <h3>Formal Essence</h3>
+        <p class="price-tag">Rs. 5,500</p>
+        <button class="btn-luxury btn-cart" onclick="alert('Added to Cart')">Add to Cart</button>
+        <a href="https://wa.me/923094076010?text=I want to buy Formal Essence" class="btn-luxury">Buy via WhatsApp</a>
     </div>
-</section>
+
+    <!-- Product 2 -->
+    <div class="luxury-card">
+        <img src="images/pexelsdhanno25288453.jpg">
+        <h3>Lavender Chiffon</h3>
+        <p class="price-tag">Rs. 6,800</p>
+        <button class="btn-luxury btn-cart" onclick="alert('Added to Cart')">Add to Cart</button>
+        <a href="https://wa.me/923094076010?text=I want to buy Lavender Chiffon" class="btn-luxury">Buy via WhatsApp</a>
+    </div>
+
+    <!-- Aap isi tarah baki 12 products isi 'luxury-card' format mein add karein -->
+</div>
 
 </body>
 </html>
