@@ -48,61 +48,50 @@
     .project-links a { font-size: 0.85rem; font-weight: 600; color: var(--purple-mid); text-decoration: none; }
     #contact {background: var(--purple-deep);text-align: center;
   color: var(--white);}
-      .contact-links{
-display:flex;
-justify-content:center;
-align-items:center;
-flex-wrap:wrap;
+     .contact-text{
+max-width:650px;
+margin:20px auto 45px;
+color:rgba(255,255,255,.8);
+font-size:16px;
+line-height:1.8;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:22px;
-margin-top:25px;
+max-width:900px;
+margin:auto;
 }
 
-.contact-btn{
-display:flex;
-align-items:center;
-gap:12px;
-padding:16px 28px;
-min-width:220px;
-border-radius:60px;
+.contact-card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:18px;
+padding:35px 25px;
+text-align:center;
 text-decoration:none;
-font-size:15px;
-font-weight:600;
+transition:.35s;
+}
+.contact-card:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,.15);
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+.contact-icon{
+font-size:42px;
+margin-bottom:15px;
+}
+.contact-card h3{
 color:#fff;
-transition:.35s ease;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
-
-.contact-btn:hover{
-transform:translateY(-5px);
-box-shadow:0 16px 35px rgba(0,0,0,.25);
-}
-
-.contact-btn .icon{
 font-size:22px;
+margin-bottom:8px;
+font-family:'Cormorant Garamond',serif;
 }
-
-.whatsapp{
-background:#25D366;
-}
-
-.whatsapp:hover{
-background:#20bd5a;
-}
-
-.phone{
-background:#0A66C2;
-}
-
-.phone:hover{
-background:#0857a5;
-}
-
-.email{
-background:#EA4335;
-}
-
-.email:hover{
-background:#d7392c;
+.contact-card p{
+color:#ddd;
+font-size:15px;
 }
   </style>
 </head>
@@ -184,24 +173,27 @@ background:#d7392c;
     I'd be happy to help. Feel free to contact me through any of the options below.
   </p>
 
-  <div class="contact-links">
+<div class="contact-grid">
 
-    <a href="https://wa.me/923094076010" target="_blank" class="contact-btn whatsapp">
-        <span class="icon">💬</span>
-        <span>Chat on WhatsApp</span>
+    <a href="https://wa.me/923094076010" target="_blank" class="contact-card">
+        <div class="contact-icon">💬</div>
+        <h3>WhatsApp</h3>
+        <p>Start a Chat</p>
     </a>
 
-    <a href="tel:+923094076010" class="contact-btn phone">
-        <span class="icon">📞</span>
-        <span>Call Now</span>
+    <a href="tel:+923094076010" class="contact-card">
+        <div class="contact-icon">📞</div>
+        <h3>Phone</h3>
+        <p>Call Now</p>
     </a>
 
-    <a href="mailto:shanzanawaz2311@gmail.com" class="contact-btn email">
-        <span class="icon">✉️</span>
-        <span>Send Email</span>
+    <a href="mailto:shanzanawaz2311@gmail.com" class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <h3>Email</h3>
+        <p>Send Email</p>
     </a>
 
-  </div>
+</div>
 
 </section>
 
