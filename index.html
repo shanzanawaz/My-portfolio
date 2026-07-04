@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -46,53 +46,8 @@
     .project-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
     .project-links { display: flex; gap: 1rem; }
     .project-links a { font-size: 0.85rem; font-weight: 600; color: var(--purple-mid); text-decoration: none; }
-    #contact {background: var(--purple-deep);text-align: center;
-  color: var(--white);}
-     .contact-text{
-max-width:650px;
-margin:20px auto 45px;
-color:rgba(255,255,255,.8);
-font-size:16px;
-line-height:1.8;
-}
-
-.contact-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:22px;
-max-width:900px;
-margin:auto;
-}
-
-.contact-card{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.15);
-border-radius:18px;
-padding:35px 25px;
-text-align:center;
-text-decoration:none;
-transition:.35s;
-}
-.contact-card:hover{
-transform:translateY(-8px);
-background:rgba(255,255,255,.15);
-box-shadow:0 20px 40px rgba(0,0,0,.25);
-}
-.contact-icon{
-font-size:42px;
-margin-bottom:15px;
-}
-.contact-card h3{
-color:#fff;
-font-size:22px;
-margin-bottom:8px;
-font-family:'Cormorant Garamond',serif;
-}
-.contact-card p{
-color:#ddd;
-font-size:15px;
-}
+    #contact { background: var(--purple-deep); text-align: center; color: var(--white); }
+    .contact-btn { display: inline-block; margin: 0.5rem; padding: 0.8rem 1.5rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 0.5rem; color: var(--white); text-decoration: none; font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -163,38 +118,12 @@ font-size:15px;
 </section>
 
 <section id="contact">
-
-  <h2 class="section-title" style="color:#fff;">
-    Let's Work Together
-  </h2>
-
-  <p style="max-width:700px;margin:0 auto 2.8rem;color:rgba(255,255,255,.82);font-size:1rem;line-height:1.8;">
-    Whether you need a modern business website, landing page or portfolio,
-    I'd be happy to help. Feel free to contact me through any of the options below.
-  </p>
-
-<div class="contact-grid">
-
-    <a href="https://wa.me/923094076010" target="_blank" class="contact-card">
-        <div class="contact-icon">💬</div>
-        <h3>WhatsApp</h3>
-        <p>Start a Chat</p>
-    </a>
-
-    <a href="tel:+923094076010" class="contact-card">
-        <div class="contact-icon">📞</div>
-        <h3>Phone</h3>
-        <p>Call Now</p>
-    </a>
-
-    <a href="mailto:shanzanawaz2311@gmail.com" class="contact-card">
-        <div class="contact-icon">✉️</div>
-        <h3>Email</h3>
-        <p>Send Email</p>
-    </a>
-
-</div>
-
+  <h2 class="section-title" style="color:white">Let's work together</h2>
+  <p style="margin-bottom: 2rem; opacity: 0.8;">Based in Multan — available for local & remote projects.</p>
+  <div class="contact-links">
+    <a href="mailto:shanzanawaz2311@gmail.com" class="contact-btn">✉️ Email Me</a>
+    <a href="https://wa.me/923094076010" class="contact-btn">💬 WhatsApp</a>
+  </div>
 </section>
 
 <footer>
