@@ -46,8 +46,64 @@
     .project-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
     .project-links { display: flex; gap: 1rem; }
     .project-links a { font-size: 0.85rem; font-weight: 600; color: var(--purple-mid); text-decoration: none; }
-    #contact { background: var(--purple-deep); text-align: center; color: var(--white); }
-    .contact-btn { display: inline-block; margin: 0.5rem; padding: 0.8rem 1.5rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 0.5rem; color: var(--white); text-decoration: none; font-size: 0.9rem; }
+    #contact {background: var(--purple-deep);text-align: center;
+  color: var(--white);}
+      .contact-links{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+gap:22px;
+margin-top:25px;
+}
+
+.contact-btn{
+display:flex;
+align-items:center;
+gap:12px;
+padding:16px 28px;
+min-width:220px;
+border-radius:60px;
+text-decoration:none;
+font-size:15px;
+font-weight:600;
+color:#fff;
+transition:.35s ease;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.contact-btn:hover{
+transform:translateY(-5px);
+box-shadow:0 16px 35px rgba(0,0,0,.25);
+}
+
+.contact-btn .icon{
+font-size:22px;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.whatsapp:hover{
+background:#20bd5a;
+}
+
+.phone{
+background:#0A66C2;
+}
+
+.phone:hover{
+background:#0857a5;
+}
+
+.email{
+background:#EA4335;
+}
+
+.email:hover{
+background:#d7392c;
+}
   </style>
 </head>
 <body>
@@ -118,12 +174,35 @@
 </section>
 
 <section id="contact">
-  <h2 class="section-title" style="color:white">Let's work together</h2>
-  <p style="margin-bottom: 2rem; opacity: 0.8;">Based in Multan — available for local & remote projects.</p>
+
+  <h2 class="section-title" style="color:#fff;">
+    Let's Work Together
+  </h2>
+
+  <p style="max-width:700px;margin:0 auto 2.8rem;color:rgba(255,255,255,.82);font-size:1rem;line-height:1.8;">
+    Whether you need a modern business website, landing page or portfolio,
+    I'd be happy to help. Feel free to contact me through any of the options below.
+  </p>
+
   <div class="contact-links">
-    <a href="mailto:shanzanawaz2311@gmail.com" class="contact-btn">✉️ Email Me</a>
-    <a href="https://wa.me/923094076010" class="contact-btn">💬 WhatsApp</a>
+
+    <a href="https://wa.me/923094076010" target="_blank" class="contact-btn whatsapp">
+        <span class="icon">💬</span>
+        <span>Chat on WhatsApp</span>
+    </a>
+
+    <a href="tel:+923094076010" class="contact-btn phone">
+        <span class="icon">📞</span>
+        <span>Call Now</span>
+    </a>
+
+    <a href="mailto:shanzanawaz2311@gmail.com" class="contact-btn email">
+        <span class="icon">✉️</span>
+        <span>Send Email</span>
+    </a>
+
   </div>
+
 </section>
 
 <footer>
