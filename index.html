@@ -46,11 +46,12 @@
     .project-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
     .project-links { display: flex; gap: 1rem; }
     .project-links a { font-size: 0.85rem; font-weight: 600; color: var(--purple-mid); text-decoration: none; }
-    #contact { background: var(--purple-deep); text-align: center; color: var(--white); }
-    .contact-btn { display: inline-block; margin: 0.5rem; padding: 0.8rem 1.5rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 0.5rem; color: var(--white); text-decoration: none; font-size: 0.9rem; }
+    #contact { background: var(--purple-deep); text-align: center; color: var(--white); padding: 5rem 6vw; }
+    .contact-item:hover { transform: scale(1.05); }
   </style>
 </head>
 <body>
+
 <nav>
   <div class="nav-logo">Shanza Nawaz</div>
   <ul class="nav-links">
@@ -70,11 +71,17 @@
   </div>
 </section>
 
+<!-- Added ID to make 'About' link work -->
+<section id="about">
+  <p class="section-label">About Me</p>
+  <h2 class="section-title">Developer with a business mindset</h2>
+  <p>I'm a BBA student from Multan, passionate about building responsive websites and helping businesses grow online.</p>
+</section>
+
 <section id="projects">
   <p class="section-label">My Work</p>
   <h2 class="section-title">Recent Projects</h2>
   <div class="projects-grid">
-    <!-- Multan Bites -->
     <div class="project-card">
       <div class="project-thumb thumb-1">🍕</div>
       <div class="project-info">
@@ -84,7 +91,6 @@
         <div class="project-links"><a href="Multan-bites.html">🔗 Live Demo</a><a href="#">📁 GitHub</a></div>
       </div>
     </div>
-    <!-- Fashion Landing -->
     <div class="project-card">
       <div class="project-thumb thumb-2">👗</div>
       <div class="project-info">
@@ -94,7 +100,6 @@
         <div class="project-links"><a href="fashion-landing.html">🔗 Live Demo</a><a href="#">📁 GitHub</a></div>
       </div>
     </div>
-    <!-- PropFind Pakistan -->
     <div class="project-card">
       <div class="project-thumb thumb-3">🏠</div>
       <div class="project-info">
@@ -104,7 +109,6 @@
         <div class="project-links"><a href="Propfind.html">🔗 Live Demo</a><a href="#">📁 GitHub</a></div>
       </div>
     </div>
-    <!-- Product Launch Page -->
     <div class="project-card">
       <div class="project-thumb thumb-4">🛍️</div>
       <div class="project-info">
@@ -117,12 +121,24 @@
   </div>
 </section>
 
+<!-- Professionally Branded Contact Section -->
 <section id="contact">
-  <h2 class="section-title" style="color:white">Let's work together</h2>
-  <p style="margin-bottom: 2rem; opacity: 0.8;">Based in Multan — available for local & remote projects.</p>
-  <div class="contact-links">
-    <a href="mailto:shanzanawaz2311@gmail.com" class="contact-btn">✉️ Email Me</a>
-    <a href="https://wa.me/923094076010" class="contact-btn">💬 WhatsApp</a>
+  <h2 class="section-title" style="color:white">Let's Connect</h2>
+  <p style="margin-bottom: 3rem; opacity: 0.8; font-size: 1.1rem;">I am currently accepting new projects. Let’s discuss your vision.</p>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 800px; margin: 0 auto;">
+    <a href="mailto:shanzanawaz2311@gmail.com" class="contact-item" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 0.75rem; text-decoration: none; color: white; transition: 0.3s;">
+      <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✉️</div>
+      <div style="font-weight: 600;">Email Me</div>
+    </a>
+    <a href="https://wa.me/923094076010" class="contact-item" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 0.75rem; text-decoration: none; color: white; transition: 0.3s;">
+      <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💬</div>
+      <div style="font-weight: 600;">WhatsApp</div>
+    </a>
+    <a href="tel:+923094076010" class="contact-item" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 0.75rem; text-decoration: none; color: white; transition: 0.3s;">
+      <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📞</div>
+      <div style="font-weight: 600;">Call Me</div>
+    </a>
   </div>
 </section>
 
