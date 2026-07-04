@@ -1,91 +1,84 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<!-- Aapki GitHub details ke mutabiq base path -->
-<base href="https://raw.githubusercontent.com/shanzanawaz/My-portfolio/main/">
-<title>Rosé Studio — Premium Fashion</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
-/* CSS styles wahi hain jo hum ne pehle discuss kiye the */
-body { font-family: 'DM Sans', sans-serif; }
-.slider-track { display: flex; transition: transform 0.5s ease; }
-.slider-track img { min-width: 100%; height: 400px; object-fit: cover; }
-.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 50px 6vw; }
-.product-card { border: 1px solid #eee; border-radius: 15px; overflow: hidden; }
-.prod-track { display: flex; transition: 0.3s; }
-.prod-track img { min-width: 100%; height: 300px; object-fit: cover; }
-</style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Ye aapka GitHub path hai -->
+    <base href="https://raw.githubusercontent.com/shanzanawaz/My-portfolio/main/">
+    <title>Rosé Studio | Premium Pakistani Fashion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <style>
+        :root { --pink-deep: #C4687E; --dark: #1A1015; --pink-pale: #FDF0F4; }
+        body { font-family: 'DM Sans', sans-serif; color: #4A3540; margin: 0; line-height: 1.6; }
+        
+        /* Header & Nav */
+        header { padding: 1.5rem 6vw; display: flex; justify-content: space-between; align-items: center; background: white; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; }
+        .nav-link { background: var(--dark); color: white; padding: 0.6rem 1.5rem; border-radius: 2rem; text-decoration: none; font-size: 0.85rem; }
+
+        /* Hero Section */
+        .hero { padding: 5rem 6vw; text-align: center; background: var(--pink-pale); }
+        .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; margin-bottom: 1rem; color: var(--dark); }
+
+        /* Product Grid */
+        .collection { padding: 4rem 6vw; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 400px; object-fit: cover; }
+        .card-content { padding: 1.5rem; text-align: center; }
+        .btn-wa { display: inline-block; margin-top: 1rem; background: #25D366; color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; font-size: 0.9rem; }
+        
+        footer { padding: 3rem; background: var(--dark); color: white; text-align: center; }
+    </style>
 </head>
 <body>
 
-<section>
-  <h1>Rosé Studio</h1>
-  <div style="width:100%; overflow:hidden;">
-    <div class="slider-track" id="heroTrack">
-      <img src="images/mohammadabbasibLaMHGx3cIgunsplash.jpg" alt="Model 1"/>
-      <img src="images/muneebmalhotra340zW7f6wJcunsplash.jpg" alt="Model 2"/>
-      <img src="images/muneebmalhotraPs6bTHRuJYgunsplash.jpg" alt="Model 3"/>
-    </div>
-  </div>
+<header>
+    <div class="logo">Rosé Studio</div>
+    <a href="https://wa.me/923094076010" class="nav-link">Order on WhatsApp</a>
+</header>
+
+<section class="hero">
+    <h1>Dress to Express</h1>
+    <p>Premium Pakistani Fashion. Handcrafted in Multan.</p>
 </section>
 
-<section class="product-grid">
-  <!-- Card 1 -->
-  <div class="product-card">
-    <div class="prod-track">
-      <img src="images/muneebmalhotraRdv9MBPHgYunsplash.jpg" alt="1"/>
-      <img src="images/muneebmalhotratK5QwL0r0ewunsplash.jpg" alt="2"/>
+<section class="collection" id="collection">
+    <div class="grid">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="images/muneebmalhotraRdv9MBPHgYunsplash.jpg" alt="Formal Wear">
+            <div class="card-content">
+                <h3>Blossom Embroidered</h3>
+                <p>Rs. 4,500</p>
+                <a href="https://wa.me/923094076010" class="btn-wa">WhatsApp Now</a>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="images/pexelsdhanno25288453.jpg" alt="Chiffon">
+            <div class="card-content">
+                <h3>Lavender Chiffon</h3>
+                <p>Rs. 6,800</p>
+                <a href="https://wa.me/923094076010" class="btn-wa">WhatsApp Now</a>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="images/pexelsgurshergill6370201030167011.jpg" alt="Dupatta">
+            <div class="card-content">
+                <h3>Silk Dupatta</h3>
+                <p>Rs. 1,800</p>
+                <a href="https://wa.me/923094076010" class="btn-wa">WhatsApp Now</a>
+            </div>
+        </div>
     </div>
-  </div>
-  <!-- Card 2 -->
-  <div class="product-card">
-    <div class="prod-track">
-      <img src="images/pexelsbijoyrahaman215872163835560689.jpg" alt="1"/>
-      <img src="images/pexelsdhanno20792015.jpg" alt="2"/>
-    </div>
-  </div>
-  <!-- Card 3 -->
-  <div class="product-card">
-    <div class="prod-track">
-      <img src="images/pexelsdhanno25288453.jpg" alt="1"/>
-      <img src="images/pexelsdhanno35902080.jpg" alt="2"/>
-      <img src="images/pexelsdhanno36104911.jpg" alt="3"/>
-    </div>
-  </div>
-  <!-- Card 4 -->
-  <div class="product-card">
-    <div class="prod-track">
-      <img src="images/pexelsgurshergill6370201030167011.jpg" alt="1"/>
-      <img src="images/pexelsgurshergill6370201030167012.jpg" alt="2"/>
-    </div>
-  </div>
-  <!-- Card 5 -->
-  <div class="product-card">
-    <div class="prod-track">
-      <img src="images/pexelsiramshehzad4508140436908409.jpg" alt="1"/>
-      <img src="images/mohammadabbasibLaMHGx3cIgunsplash.jpg" alt="2"/>
-    </div>
-  </div>
-  <!-- Card 6 -->
-  <div class="product-card">
-    <div class="prod-track">
-      <img src="images/muneebmalhotra340zW7f6wJcunsplash.jpg" alt="1"/>
-      <img src="images/muneebmalhotraPs6bTHRuJYgunsplash.jpg" alt="2"/>
-      <img src="images/muneebmalhotraRdv9MBPHgYunsplash.jpg" alt="3"/>
-    </div>
-  </div>
 </section>
 
-<script>
-document.querySelectorAll('.prod-track').forEach(track => {
-    let idx = 0;
-    track.addEventListener('click', () => {
-        idx = (idx + 1) % track.children.length;
-        track.style.transform = `translateX(-${idx * 100}%)`;
-    });
-});
-</script>
+<footer>
+    <p>© 2026 Rosé Studio | Multan, Pakistan</p>
+</footer>
+
 </body>
 </html>
